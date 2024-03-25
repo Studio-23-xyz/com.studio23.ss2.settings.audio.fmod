@@ -5,6 +5,7 @@ using Studio23.SS2.AudioSystem.fmod.Core;
 using Studio23.SS2.AudioSystem.fmod.Data;
 using Studio23.SS2.Settings.Audio.fmod.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Studio23.SS2.Settings.Audio.fmod.Samples
 {
@@ -31,6 +32,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Samples
             foreach (var data in _audioSettingsData)
             {
                 data.Initialize(_audioSettingsDictionary[data],data.FmodBusSettings.GetDefaultVolume());
+                data.GetComponent<Slider>().onValueChanged.AddListener(data.FmodBusSettings.UpdateVolume);
             }
         }
         private AudioSettingsData GetAudioSettingsData(string busName)

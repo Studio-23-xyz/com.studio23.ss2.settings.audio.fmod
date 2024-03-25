@@ -1,4 +1,5 @@
 using System.Collections;
+using Studio23.SS2.Settings.Audio.fmod.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,7 @@ namespace Studio23.SS2.UIKit.Components
     {
         [SerializeField] private TextMeshProUGUI LabelText;
         [SerializeField] private TextMeshProUGUI DisplayText;
-     
         [SerializeField] Slider _slider;
-
 
         public float Value => _slider.value;
 

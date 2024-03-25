@@ -131,6 +131,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1859938428}
     m_Modifications:
+    - target: {fileID: 430972847175642975, guid: 2bbe1af07a4857e4c88456ffb2428b94,
+        type: 3}
+      propertyPath: BusName
+      value: Music
+      objectReference: {fileID: 0}
     - target: {fileID: 686685261974911692, guid: 2bbe1af07a4857e4c88456ffb2428b94,
         type: 3}
       propertyPath: m_Pivot.x
@@ -655,6 +660,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1859938428}
     m_Modifications:
+    - target: {fileID: 430972847175642975, guid: 2bbe1af07a4857e4c88456ffb2428b94,
+        type: 3}
+      propertyPath: BusName
+      value: VO
+      objectReference: {fileID: 0}
     - target: {fileID: 686685261974911692, guid: 2bbe1af07a4857e4c88456ffb2428b94,
         type: 3}
       propertyPath: m_Pivot.x
@@ -893,6 +903,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1859938428}
     m_Modifications:
+    - target: {fileID: 430972847175642975, guid: 2bbe1af07a4857e4c88456ffb2428b94,
+        type: 3}
+      propertyPath: BusName
+      value: SFX
+      objectReference: {fileID: 0}
     - target: {fileID: 686685261974911692, guid: 2bbe1af07a4857e4c88456ffb2428b94,
         type: 3}
       propertyPath: m_Pivot.x

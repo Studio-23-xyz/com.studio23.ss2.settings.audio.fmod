@@ -7,7 +7,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Data
     [CreateAssetMenu(fileName = "FmodBusSettings", menuName = "Studio-23/Settings/Audio/BusAudioSettingsData", order = 1)]
     public class FMODBusSettings : ScriptableObject
     {
-        public string _busName;
+        private string _busName;
         [Range(0,1)] [SerializeField] private float _defaultVolume;
         private float _currentVolume;
 
@@ -28,7 +28,8 @@ namespace Studio23.SS2.Settings.Audio.fmod.Data
         /// <param name="volume"></param>
         public void UpdateVolume(float volume)
         {
-            FMODManager.Instance.MixerManager.SetBusVolume(_busName, volume);
+            _currentVolume = volume;
+            FMODManager.Instance.MixerManager.SetBusVolume(_busName, _currentVolume);
         }
 
         /// <summary>
