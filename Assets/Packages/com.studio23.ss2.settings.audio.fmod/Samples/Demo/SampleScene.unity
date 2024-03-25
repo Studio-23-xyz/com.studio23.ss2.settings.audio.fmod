@@ -1427,8 +1427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSettingsData:
   - {fileID: 1942260199}
-  - {fileID: 2066237444}
   - {fileID: 1360313040}
+  - {fileID: 2066237444}
   - {fileID: 614233509}
 --- !u!1001 &1942260197
 PrefabInstance:
