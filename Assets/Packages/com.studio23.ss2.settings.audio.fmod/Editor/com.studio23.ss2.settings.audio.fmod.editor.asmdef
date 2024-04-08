@@ -1,0 +1,21 @@
+{
+    "name": "com.studio23.ss2.settings.audio.fmod.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3d5764e747f2cd14495eb6f0e7e4d942",
+        "GUID:7f24c5abc67cd31428474c59fcd40f41",
+        "GUID:aab3caaf43456d6449a3e035348ff798",
+        "GUID:0c752da273b17c547ae705acf0f2adf2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
