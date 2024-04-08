@@ -1,43 +1,38 @@
 
-using System.Collections.Generic;
-using System.Linq;
 using Studio23.SS2.AudioSystem.fmod.Core;
 using Studio23.SS2.AudioSystem.fmod.Data;
 using Studio23.SS2.Settings.Audio.fmod.Data;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Studio23.SS2.Settings.Audio.fmod.Samples
+namespace  Studio23.SS2.Settings.Audio.fmod.Samples
 {
     public class SampleAudioSettingsController : MonoBehaviour
     {
-        [SerializeField] private List<AudioSettingsData> _audioSettingsData;
-        private Dictionary<AudioSettingsData,string> _audioSettingsDictionary;
+        public static SampleAudioSettingsController Instance;
 
-        void Start()
+        public FMODBusSettings MasterSetting;
+        public FMODBusSettings MusicSetting;
+        public FMODBusSettings SFXSetting;
+        public FMODBusSettings VOSetting;
+
+        private void Awake()
         {
-            Initialize();
+            if (Instance == null)
+                Instance = this;
         }
 
-        private void Initialize()
+
+        public void Initialize()
         {
-            //Need sample data for testing
+            //TODO load from save
+
             FMODManager.Instance.Initialize();
-
-            _audioSettingsDictionary[GetAudioSettingsData("Master")] = FMODBusList.Master;
-            _audioSettingsDictionary[GetAudioSettingsData("SFX")] = FMODBusList.SFX;
-            _audioSettingsDictionary[GetAudioSettingsData("Music")] = FMODBusList.Music;
-            _audioSettingsDictionary[GetAudioSettingsData("VO")] = FMODBusList.VO;
-
-            foreach (var data in _audioSettingsData)
-            {
-                data.Initialize(_audioSettingsDictionary[data],data.FmodBusSettings.GetDefaultVolume());
-                data.GetComponent<Slider>().onValueChanged.AddListener(data.FmodBusSettings.UpdateVolume);
-            }
+            MasterSetting.Initialize(FMODBusList.Master, MasterSetting.GetDefaultVolume());
+            MusicSetting.Initialize(FMODBusList.Music, MusicSetting.GetDefaultVolume());
+            SFXSetting.Initialize(FMODBusList.SFX, SFXSetting.GetDefaultVolume());
+            VOSetting.Initialize(FMODBusList.VO, VOSetting.GetDefaultVolume());
         }
-        private AudioSettingsData GetAudioSettingsData(string busName)
-        {
-            return _audioSettingsData.FirstOrDefault(x => x.BusName.Equals(busName));
-        }
+
     }
+
 }

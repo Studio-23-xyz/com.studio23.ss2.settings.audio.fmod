@@ -16,7 +16,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Data
         /// </summary>
         /// <param name="busName"></param>
         /// <param name="volume"></param>
-        public void Initialize(string busName, float volume )
+        public void Initialize(string busName, float volume)
         {
             _busName = busName;
             _currentVolume = volume;

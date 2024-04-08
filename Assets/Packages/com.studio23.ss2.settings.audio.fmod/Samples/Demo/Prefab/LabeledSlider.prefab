@@ -447,7 +447,6 @@ GameObject:
   - component: {fileID: 7216969710715162916}
   - component: {fileID: 1246241616874170793}
   - component: {fileID: 5475326371734705707}
-  - component: {fileID: 430972847175642975}
   m_Layer: 5
   m_Name: LabeledSlider
   m_TagString: Untagged
@@ -557,20 +556,10 @@ MonoBehaviour:
   LabelText: {fileID: 7545108612095354993}
   DisplayText: {fileID: 8526525212076004990}
   _slider: {fileID: 3884952486902858702}
---- !u!114 &430972847175642975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2947932786341046165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 308cf1bf4537eff46befb633a857053a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BusName: Master
-  FmodBusSettings: {fileID: 11400000, guid: a0ccdb27d7fc40949aa3e2ba9e09c51f, type: 2}
+  _makeUpdateImmedietly: 0
+  SliderValueUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3867537680114454408
 GameObject:
   m_ObjectHideFlags: 0
