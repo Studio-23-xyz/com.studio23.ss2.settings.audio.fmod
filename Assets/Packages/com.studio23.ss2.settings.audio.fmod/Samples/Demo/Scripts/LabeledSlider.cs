@@ -12,7 +12,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Samples
         [SerializeField] private TextMeshProUGUI LabelText;
         [SerializeField] private TextMeshProUGUI DisplayText;
         [SerializeField] Slider _slider;
-        [SerializeField] private bool _makeUpdateImmedietly;
+        [SerializeField] private bool _updateImmedietly;
         public UnityEvent<float> SliderValueUpdated;
         private CancellationTokenSource _sliderCancelToken;
         public float Value => _slider.value;
@@ -20,7 +20,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Samples
         void Start()
         {
 
-            _slider.onValueChanged.AddListener((_ => { SelectedIndexUpdateAction(); }));
+            _slider.onValueChanged.AddListener((_ => { SliderValueUpdateAction(); }));
         }
 
 
@@ -30,7 +30,7 @@ namespace Studio23.SS2.Settings.Audio.fmod.Samples
             _slider.value = value;
             _slider.minValue = minValue;
             _slider.maxValue = maxValue;
-            SelectedIndexUpdateAction(false);
+            SliderValueUpdateAction(false);
         }
 
 
@@ -40,11 +40,10 @@ namespace Studio23.SS2.Settings.Audio.fmod.Samples
         }
 
 
-        public void SelectedIndexUpdateAction(bool checkLiveStatus = true)
+        public void SliderValueUpdateAction(bool checkLiveStatus = true)
         {
             ShowText();
-            if (checkLiveStatus)
-                if (!_makeUpdateImmedietly) return;
+            if (checkLiveStatus && !_updateImmedietly) return;
             ApplyAction(_slider.value);
         }
 
