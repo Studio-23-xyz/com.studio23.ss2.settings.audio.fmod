@@ -10,10 +10,10 @@ namespace  Studio23.SS2.Settings.Audio.fmod.Samples
     {
         public static SampleAudioSettingsController Instance;
 
-        public FMODBusSettings MasterSetting;
-        public FMODBusSettings MusicSetting;
-        public FMODBusSettings SFXSetting;
-        public FMODBusSettings VOSetting;
+        public FMODVCASettings MasterSetting;
+        public FMODVCASettings MusicSetting;
+        public FMODVCASettings SFXSetting;
+        public FMODVCASettings VOSetting;
 
         private void Awake()
         {
@@ -27,10 +27,10 @@ namespace  Studio23.SS2.Settings.Audio.fmod.Samples
             //TODO load from save
 
             FMODManager.Instance.Initialize();
-            MasterSetting.Initialize(FMODBusList.Master, MasterSetting.GetDefaultVolume());
-            MusicSetting.Initialize(FMODBusList.Music, MusicSetting.GetDefaultVolume());
-            SFXSetting.Initialize(FMODBusList.SFX, SFXSetting.GetDefaultVolume());
-            VOSetting.Initialize(FMODBusList.VO, VOSetting.GetDefaultVolume());
+            //MasterSetting.Initialize(FMODBusList.Master, MasterSetting.GetDefaultVolume());
+            //MusicSetting.Initialize(FMODBusList.Music, MusicSetting.GetDefaultVolume());
+            //SFXSetting.Initialize(FMODBusList.SFX, SFXSetting.GetDefaultVolume());
+            //VOSetting.Initialize(FMODBusList.VO, VOSetting.GetDefaultVolume());
         }
 
     }
